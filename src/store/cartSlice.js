@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
-
 // Fetch cart items async action
 export const fetchCartItems = createAsyncThunk(
   'cart/fetchCartItems',

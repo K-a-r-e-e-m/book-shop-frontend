@@ -11,7 +11,6 @@ import './Shop.css';
 import './Pagination.css';
 import { ToastContainer } from 'react-toastify';
 import './Search.css';
-import { useHistory } from 'react-router-dom';
 
 const fetchBooksWithDelay = async () => {
   return new Promise((resolve) => {
@@ -29,11 +28,9 @@ function Shop() {
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 20; // Set the number of books per page
 
-   
-
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
-  console.log('reloadpage');
+
   // Fetch books
   const { data: books, isError: isBooksError, isLoading: isBooksLoading,isPending, error: booksError, isFetched } = useQuery({
     queryKey: ["books"],

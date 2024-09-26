@@ -16,7 +16,8 @@ export async function loader({ request, params }) {
   const id = params.id;
   console.log("id",id)
   console.log("params", request)
-  const response = await fetch(`https://bookshop-backend.up.railway.app/api/details/`+ id, {
+
+  const response = await fetch('https://bookshop-backend.up.railway.app/api/details/'+ id, {
     credentials: 'include'
   });
     
