@@ -2,6 +2,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./DataTable.scss";
 import { Link } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 const DataTable = (props) => {
   console.log("props", props); 
@@ -11,7 +12,6 @@ const DataTable = (props) => {
   const queryClient = useQueryClient();
 const mutation = useMutation({
   mutationFn: async (id) => {
-    const apiUrl = import.meta.env.VITE_API_BASE_URL;
     const response = await fetch(`${apiUrl}/${props.slug}/${id}`, {
       method: "delete",
     });

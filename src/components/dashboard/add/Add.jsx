@@ -1,6 +1,7 @@
 import { data } from "framer-motion/client";
 import "./Add.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Add = (props) => {
   const queryClient = useQueryClient();
@@ -9,7 +10,6 @@ const Add = (props) => {
     mutationFn: async (formData) => {
       console.log("Form Data:",  formData);
       console.log("Slug:", props.slug);
-      const apiUrl = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(`${apiUrl}/${props.slug}`, {
         method: "post",
         headers: {

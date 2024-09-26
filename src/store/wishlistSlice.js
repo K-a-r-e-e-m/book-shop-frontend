@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // Async thunk to fetch wishlist from backend
 export const fetchWishlist = createAsyncThunk(
@@ -11,7 +12,6 @@ export const fetchWishlist = createAsyncThunk(
         return rejectWithValue('User ID not found');
       }
 
-      const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
       const response = await fetch(`${apiUrl}/wishlist?user_id=${userId}`);
 

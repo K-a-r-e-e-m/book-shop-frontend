@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { clearUserId } from "../store/userSlice";
 import { fetchWishlist, clearWishList } from "../store/wishlistSlice";
 import DarkModeToggle from "../UI/DarkModeToggle";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 
 function RootPage() {
@@ -39,7 +40,6 @@ function RootPage() {
     
     const checkSession = async () => {
         try {
-            const apiUrl = import.meta.env.VITE_API_BASE_URL;
             const response = await fetch(`${apiUrl}/check-session`, {
                 credentials: 'include', // Send cookies along with request
             });

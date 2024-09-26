@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
 
 // Fetch cart items async action
 export const fetchCartItems = createAsyncThunk(
@@ -10,7 +12,6 @@ export const fetchCartItems = createAsyncThunk(
     if (!userId) {
       return rejectWithValue('User ID not found');
     }
-    const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
     const response = await fetch(`${apiUrl}/api/cart_items?user_id=${userId}`);
      

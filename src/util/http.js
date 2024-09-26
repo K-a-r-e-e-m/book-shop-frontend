@@ -3,9 +3,9 @@ import { QueryClient } from '@tanstack/react-query';
 export const queryClient = new QueryClient();
 import { setUserId } from '../store/userSlice';
 import { useDispatch } from 'react-redux';
-
-
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+
 
 export async function NewUser({ name, email, password }) {
 
@@ -73,7 +73,6 @@ export async function fetchUsers(data, dispatch) {
 
 export async function fetchBooks() {
   try {
-    const apiUrl = import.meta.env.VITE_API_BASE_URL;
     const response = await fetch(`${apiUrl}/shop`, {
       credentials: 'include'  // Ensure cookies are included in requests
     });
