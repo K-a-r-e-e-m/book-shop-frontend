@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 
 // Fetch cart items async action
@@ -13,7 +12,7 @@ export const fetchCartItems = createAsyncThunk(
       return rejectWithValue('User ID not found');
     }
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart_items?user_id=${userId}`);
+    const response = await fetch(`https://bookshop-backend.up.railway.app/api/cart_items?user_id=${userId}`);
      
     if (!response.ok) {
       return rejectWithValue(`HTTP error: ${response.status}`);

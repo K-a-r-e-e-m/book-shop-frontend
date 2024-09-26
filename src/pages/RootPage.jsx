@@ -13,7 +13,6 @@ import { useEffect } from "react";
 import { clearUserId } from "../store/userSlice";
 import { fetchWishlist, clearWishList } from "../store/wishlistSlice";
 import DarkModeToggle from "../UI/DarkModeToggle";
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 
 function RootPage() {
@@ -51,7 +50,7 @@ function RootPage() {
     
     const checkSession = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/check-session`, {
+            const response = await fetch(`https://bookshop-backend.up.railway.app/check-session`, {
                 credentials: 'include', // Send cookies along with request
             });
             

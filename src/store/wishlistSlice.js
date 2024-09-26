@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // Async thunk to fetch wishlist from backend
 export const fetchWishlist = createAsyncThunk(
@@ -13,7 +12,7 @@ export const fetchWishlist = createAsyncThunk(
       }
 
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/wishlist?user_id=${userId}`);
+      const response = await fetch(`https://bookshop-backend.up.railway.app/wishlist?user_id=${userId}`);
 
       if (!response.ok) {
         const errorData = await response.json();

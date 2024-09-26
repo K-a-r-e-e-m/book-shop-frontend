@@ -1,7 +1,6 @@
 import React from 'react'
 import ShopDescription from '../components/Shop/ShopDescritpion'
 import { json } from 'react-router-dom'
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 function ShopDesPage() {
   return (
@@ -17,7 +16,7 @@ export async function loader({ request, params }) {
   const id = params.id;
   console.log("id",id)
   console.log("params", request)
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/details/`+ id, {
+  const response = await fetch(`https://bookshop-backend.up.railway.app/api/details/`+ id, {
     credentials: 'include'
   });
     

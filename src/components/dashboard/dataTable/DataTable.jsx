@@ -2,7 +2,6 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./DataTable.scss";
 import { Link } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 const DataTable = (props) => {
   console.log("props", props); 
@@ -12,7 +11,7 @@ const DataTable = (props) => {
   const queryClient = useQueryClient();
 const mutation = useMutation({
   mutationFn: async (id) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/${props.slug}/${id}`, {
+    const response = await fetch(`https://bookshop-backend.up.railway.app/${props.slug}/${id}`, {
       method: "delete",
     });
     if (!response.ok) {
