@@ -13,7 +13,7 @@ export const fetchWishlist = createAsyncThunk(
       }
 
 
-      const response = await fetch(`${apiUrl}/wishlist?user_id=${userId}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/wishlist?user_id=${userId}`);
 
       if (!response.ok) {
         const errorData = await response.json();

@@ -17,7 +17,7 @@ export async function loader({ request, params }) {
   const id = params.id;
   console.log("id",id)
   console.log("params", request)
-  const response = await fetch(`${apiUrl}/api/details/`+ id, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/details/`+ id, {
     credentials: 'include'
   });
     

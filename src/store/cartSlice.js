@@ -13,7 +13,7 @@ export const fetchCartItems = createAsyncThunk(
       return rejectWithValue('User ID not found');
     }
 
-    const response = await fetch(`${apiUrl}/api/cart_items?user_id=${userId}`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart_items?user_id=${userId}`);
      
     if (!response.ok) {
       return rejectWithValue(`HTTP error: ${response.status}`);

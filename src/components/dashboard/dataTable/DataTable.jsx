@@ -12,7 +12,7 @@ const DataTable = (props) => {
   const queryClient = useQueryClient();
 const mutation = useMutation({
   mutationFn: async (id) => {
-    const response = await fetch(`${apiUrl}/${props.slug}/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/${props.slug}/${id}`, {
       method: "delete",
     });
     if (!response.ok) {

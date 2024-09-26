@@ -40,7 +40,7 @@ function RootPage() {
     
     const checkSession = async () => {
         try {
-            const response = await fetch(`${apiUrl}/check-session`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/check-session`, {
                 credentials: 'include', // Send cookies along with request
             });
             

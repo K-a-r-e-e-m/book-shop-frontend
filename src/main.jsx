@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
 
 /*
 export async function checkSession() { 
-  const response = await fetch(`${apiUrl}/check-session`);
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/check-session`);
   console.log("log status--->" ,response.status)
 
   if (!response.ok) {

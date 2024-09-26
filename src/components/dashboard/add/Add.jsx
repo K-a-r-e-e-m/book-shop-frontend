@@ -10,7 +10,7 @@ const Add = (props) => {
     mutationFn: async (formData) => {
       console.log("Form Data:",  formData);
       console.log("Slug:", props.slug);
-      const response = await fetch(`${apiUrl}/${props.slug}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/${props.slug}`, {
         method: "post",
         headers: {
           "Content-Type": "application/json", // Send as JSON
