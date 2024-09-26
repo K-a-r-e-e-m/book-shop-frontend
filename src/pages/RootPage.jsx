@@ -18,7 +18,7 @@ import DarkModeToggle from "../UI/DarkModeToggle";
 
 
 function RootPage() {
-    const [isLoading, setIsLoading] = useState(true);
+  
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation();
@@ -37,15 +37,7 @@ function RootPage() {
     const totalWishlistItems = wishlistItems.length;
 
     const darkMode = useSelector((state) => state.theme.darkMode);
-    useEffect(() => {
-        // Set a timeout to change the loading state after 5 seconds
-        const timeout = setTimeout(() => {
-          setIsLoading(false);
-        }, 5000); // 5000 ms = 5 seconds
     
-        // Cleanup the timeout on component unmount
-        return () => clearTimeout(timeout);
-      }, []);
     
        
     
