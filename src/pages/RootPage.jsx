@@ -16,10 +16,11 @@ import DarkModeToggle from "../UI/DarkModeToggle";
 
 
 function RootPage() {
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation();
-    const [isLoading, setIsLoading] = useState(true);
+   
     const isAuth = useSelector(state => state.auth.isAuthenticated);
     const isAdmin = useSelector(state => state.auth.isAdmin);
     // Access the cart state from Redux
@@ -42,7 +43,10 @@ function RootPage() {
         // Cleanup the timeout on component unmount
         return () => clearTimeout(timeout);
       }, []);
-
+    
+       
+    
+    
 
 
     
@@ -147,6 +151,7 @@ function RootPage() {
 
     return (
         <>
+        {isLoading && <h2>Loading... Please wait.</h2> }
 
             <header className="header" id="header">
                 <nav className="nav container">
