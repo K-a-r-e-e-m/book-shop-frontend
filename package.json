@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npx http-server ./dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -26,6 +27,7 @@
     "react-svg": "^16.1.34",
     "react-toastify": "^10.0.5",
     "route": "^0.2.5",
+    "serve": "^14.2.3",
     "styled-components": "^6.1.13",
     "swiper": "^11.1.9"
   },
