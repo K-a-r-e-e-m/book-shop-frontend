@@ -146,7 +146,7 @@ function RootPage() {
 
     return (
         <>
-        {isLoading && <h2>Loading... Please wait.</h2> }
+         
 
             <header className="header" id="header">
                 <nav className="nav container">
