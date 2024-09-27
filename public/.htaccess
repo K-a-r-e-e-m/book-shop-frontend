@@ -1,9 +1,0 @@
-RewriteEngine On
-RewriteBase /
-
-# Allow access to existing files and directories
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Redirect all other routes to index.html
-RewriteRule ^.*$ /index.html [L,QSA]
