@@ -4,7 +4,7 @@
       "output": "dist"
     },
     "start": {
-      "command": "npx serve ./dist",
+      "command": "npx serve -s ./dist -l 8080",
       "port": 8080
     },
     "watchPaths": ["src/**/*", "public/**/*"]
