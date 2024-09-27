@@ -8,7 +8,7 @@
 
 [static]
   # This is where the Nixpacks deployer serves static files
-  path = "build"
+  path = "dist"
 
   # Ensure all routes are redirected to index.html for React Router
   redirects = [
