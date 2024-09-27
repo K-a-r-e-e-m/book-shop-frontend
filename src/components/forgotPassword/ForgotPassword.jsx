@@ -20,13 +20,16 @@ function ForgotPasswordPage() {
       console.log("data token",data);
       
       
-      
-      setToken(data.reset_token);
       // ResetPasswordPage({token});
-      navigate('/');
+      setToken(data.reset_token);
+
+      // Use setTimeout to delay navigation
+      setTimeout(() => {
+        navigate('/'); // Navigate to the desired route after the delay
+      }, 3000); // 2000 milliseconds = 2 seconds
       
       
-      setMessage('Token sent! Check your email for the reset link.');
+      setMessage('An email has been sent with instructions to reset your password');
     },
     onError: (error) => {
       setMessage(error.message || 'An error occurred while requesting the token.');
