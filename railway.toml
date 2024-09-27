@@ -1,0 +1,16 @@
+[build]
+  builder = "nixpacks"
+  command = "npm run build"
+
+[deploy]
+  start = "npm run start"
+  port = 8080
+
+[static]
+  # This is where the Nixpacks deployer serves static files
+  path = "build"
+
+  # Ensure all routes are redirected to index.html for React Router
+  redirects = [
+    { source = "/*", destination = "/index.html", status = 200 }
+  ]
