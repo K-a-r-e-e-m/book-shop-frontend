@@ -3,22 +3,27 @@ import LI from "./Header/LI";
 import "./Header/Header.css";
 import Footer from "../components/Footer";
 
+
 import { authActions } from '../store/auth';
 import { logoutUser, fetchCarts } from "../util/http";
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useMutation, useQueries } from "@tanstack/react-query";
 import { fetchCartItems, clearCart } from '../store/cartSlice';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { clearUserId } from "../store/userSlice";
 import { fetchWishlist, clearWishList } from "../store/wishlistSlice";
 import DarkModeToggle from "../UI/DarkModeToggle";
 
 
+
 function RootPage() {
+  
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation();
+   
+    
     const isAuth = useSelector(state => state.auth.isAuthenticated);
     const isAdmin = useSelector(state => state.auth.isAdmin);
     // Access the cart state from Redux
@@ -33,7 +38,10 @@ function RootPage() {
 
     const darkMode = useSelector((state) => state.theme.darkMode);
     
-
+    
+       
+    
+    
 
 
     
@@ -138,6 +146,7 @@ function RootPage() {
 
     return (
         <>
+         
 
             <header className="header" id="header">
                 <nav className="nav container">
