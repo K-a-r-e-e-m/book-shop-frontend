@@ -5,16 +5,8 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  build: {
-    outDir: 'dist',
-  },
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
   base: '/',
   server: {
-    historyApiFallback: true, // Add this line
+    historyApiFallback: true, // Add this to allow SPA routing
   },
 });
