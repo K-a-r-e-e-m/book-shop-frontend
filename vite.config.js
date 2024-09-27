@@ -5,10 +5,6 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  server: {
-    port: 8080,
-    open: true,
-  },
   build: {
     outDir: 'dist',
   },
@@ -17,9 +13,8 @@ export default defineConfig({
       '@': '/src',
     },
   },
-  // Catch-all route to serve index.html for unknown paths
-  esbuild: {
-    target: 'esnext',
-  },
   base: '/',
+  server: {
+    historyApiFallback: true, // Add this line
+  },
 });
