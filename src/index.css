@@ -398,8 +398,12 @@ body.dark-theme {
 @media (max-width: 500px) {
   .main {
     width: 90vw;
-    /* margin: 0 auto; */
+ 
+    margin: 0 1rem;
     
+  }
+  .discount__img-1, .discount__img-2 {
+    width: 140px;
   }
 
 }
